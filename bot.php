@@ -20,7 +20,6 @@ if (!is_null($events['events'])) {
 	   $text = $event['message']['text'];
 	   // Get replyToken
 	   $replyToken = $event['replyToken'];
-			$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
 
   	   // Build message to reply back
            $Topic = "NodeMCU1" ;
