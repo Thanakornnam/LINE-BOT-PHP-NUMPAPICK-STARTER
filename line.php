@@ -3,9 +3,6 @@
 
   $replyToken = $deCode['events'][0]['replyToken'];
 
-	$messages = [];
-	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
 
 
 function send_LINE($msg){
@@ -15,6 +12,9 @@ function send_LINE($msg){
         'type' => 'text',
         'text' => $msg
       	];
+	messages['replyToken'] = $replyToken;
+	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
+
 
 
       // Make a POST Request to Messaging API to reply to sender
