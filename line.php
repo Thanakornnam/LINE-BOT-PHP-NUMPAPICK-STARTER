@@ -8,6 +8,8 @@ function send_LINE($msg){
         'type' => 'text',
         'text' => $msg
         //'text' => $text
+	$messages['replyToken'] = $replyToken;
+	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
       ];
 
       // Make a POST Request to Messaging API to reply to sender
