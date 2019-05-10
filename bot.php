@@ -14,10 +14,7 @@ if (!is_null($events['ESP'])) {
 		    
 if (!is_null($events['events'])) {
 	
-	  $replyToken = $events['events'][0]['replyToken'];
-    $typeMessage = $events['events'][0]['message']['type'];
-    $userMessage = $events['events'][0]['message']['text'];
-    $userMessage = strtolower($userMessage);
+
 	
 	
    echo "line bot";
@@ -31,14 +28,7 @@ if (!is_null($events['events'])) {
 	   $replyToken = $event['replyToken'];
    
 		
-		
-    switch ($typeMessage){
-        case 'text':
-            switch ($userMessage) {
-                case "t":
-                    $textReplyMessage = "Bot ตอบกลับคุณเป็นข้อความ";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;
+
 			    
 			    
 			    
