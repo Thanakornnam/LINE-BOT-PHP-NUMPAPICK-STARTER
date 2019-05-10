@@ -3,10 +3,6 @@
 
   $replyToken = $deCode['events'][0]['replyToken'];
 
-	$messages = [];
-	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
-
 function send_LINE($msg){
  $access_token = 'RnleJ9mfXwshKzIVXw815036Pj5qDchpkJKmIk/KXlRWTP8d/b8LkGPQ0gz09soxr+hbc4GooVYSfEZJNVPk6AcRrrtkTAIXHbsOn+yX5g1cTv5ar6PY83jpLxZr1d/6/WiKhUfeh18cK+cp6nhXhgdB04t89/1O/w1cDnyilFU='; 
 
