@@ -14,10 +14,7 @@ if (!is_null($events['ESP'])) {
 		    
 if (!is_null($events['events'])) {
 	
-
-	
-	
-   echo "line bot";
+	  echo "line bot";
    // Loop through each event
    foreach ($events['events'] as $event) {
 	// Reply only when message sent is in 'text' format
@@ -25,13 +22,7 @@ if (!is_null($events['events'])) {
 	   // Get text sent
 	   $text = $event['message']['text'];
 	   // Get replyToken
-	   $replyToken = $event['replyToken'];
-   
-		
-
-			    
-			    
-			    
+	   $replyToken = $event['replyToken'];		    
   	   // Build message to reply back
            $Topic = "NodeMCU1" ;
 	   getMqttfromlineMsg($Topic,$text);
