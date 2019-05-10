@@ -11,16 +11,27 @@ if (!is_null($events['ESP'])) {
    echo "OK";
 }
 
-
-
-
-$events = json_decode($content, true);
-if(!is_null($events)){
-    // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
-    $replyToken = $events['events'][0]['replyToken'];
+		    
+if (!is_null($events['events'])) {
+	
+	  $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
+	
+	
+   echo "line bot";
+   // Loop through each event
+   foreach ($events['events'] as $event) {
+	// Reply only when message sent is in 'text' format
+	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+	   // Get text sent
+	   $text = $event['message']['text'];
+	   // Get replyToken
+	   $replyToken = $event['replyToken'];
+   
+		
+		
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
@@ -31,24 +42,16 @@ if(!is_null($events)){
 			    
 			    
 			    
-			    
-			    
-if (!is_null($events['events'])) {
-   echo "line bot";
-   // Loop through each event
-   foreach ($events['events'] as $event) {
-	// Reply only when message sent is in 'text' format
-	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-	   // Get text sent
-	   $text = $event['message']['text'];
-	   // Get replyToken
-	   $replyToken = $event['replyToken'];
-
   	   // Build message to reply back
            $Topic = "NodeMCU1" ;
 	   getMqttfromlineMsg($Topic,$text);
+		
 	}
+	   
     }
  }
+
+ 
+			    
  echo "OK3";
 ?>
